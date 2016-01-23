@@ -16,7 +16,7 @@ var staticFiles = [
 ];
 
 gulp.task('less', function () {
-  return gulp.src(appFolder + 'less/**/*.less')
+  return gulp.src(appFolder + 'less/style.less')
     .pipe(less().on('error', function(err){
       gutil.log(err);
       this.emit('end');
