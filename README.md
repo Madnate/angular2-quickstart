@@ -6,5 +6,5 @@ Simple boilerplate for Angular2, based on the quickstart tutorial of [angular.io
 
 ```shell
 npm install
-npm start
+gulp
 ```
