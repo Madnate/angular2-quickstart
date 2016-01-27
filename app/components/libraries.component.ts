@@ -11,4 +11,8 @@ export class LibrariesComponent {
     new Library('Action'),
     new Library('Personne 3')
   ];
+
+  addLibrary(title) {
+    this.libraries.push(new Library(title));
+  }
 }

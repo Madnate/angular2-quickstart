@@ -8,4 +8,9 @@
     </li>
   </ul>
 
+  <form class="libraries--new" (ngSubmit)="addLibrary(title.value)">
+    <label for="title">Ajouter une librarie</label>
+    <input name="title" #title placeholder="Titre">
+  </form>
+
 </section>
