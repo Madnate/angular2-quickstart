@@ -3,17 +3,7 @@
   <h2>Libraries</h2>
 
   <ul class="libraries--list">
-    <li *ngFor="#library of libraries">
-      {{library.title}}
-      <ul class="libraries--terms">
-        <li *ngFor="#term of library.terms">
-          {{term}}
-        </li>
-      </ul>
-      <form class="libraries--new-term" (ngSubmit)="addTerm(library, term.value)">
-        <input name="term" #term placeholder="Nouveau terme">
-      </form>
-    </li>
+    <li class="matchmaker-library library" *ngFor="#library of libraries" [library]="library"></li>
   </ul>
 
   <form class="libraries--new" (ngSubmit)="addLibrary(title.value)">

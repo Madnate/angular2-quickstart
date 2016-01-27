@@ -1,11 +1,13 @@
 import {Component}        from 'angular2/core';
+import {LibraryComponent} from './library.component';
 import {Library}          from '../classes/library';
 import {LibrariesService} from '../services/libraries.service';
 
 @Component({
   selector: 'matchmaker-libraries',
   templateUrl: 'app/templates/libraries.html',
-  providers: [LibrariesService]
+  providers: [LibrariesService],
+  directives: [LibraryComponent]
 })
 export class LibrariesComponent {
   libraries: Array<Library>;
@@ -21,9 +23,5 @@ export class LibrariesComponent {
 
   addLibrary(title: string) {
     this._librariesService.addLibrary(title);
-  }
-
-  addTerm(library: Library, term: string) {
-    library.addTerm(term);
   }
 }

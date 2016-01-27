@@ -1,0 +1,9 @@
+{{library.title}}
+<ul class="library--terms">
+  <li *ngFor="#term of library.terms">
+    {{term}}
+  </li>
+</ul>
+<form class="library--new-term" (ngSubmit)="addTerm(term.value)">
+  <input name="term" #term placeholder="Nouveau terme">
+</form>
