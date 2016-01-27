@@ -5,6 +5,11 @@
   <ul class="libraries--list">
     <li *ngFor="#library of libraries">
       {{library.title}}
+      <ul class="libraries--terms">
+        <li *ngFor="#term of library.terms">
+          {{term}}
+        </li>
+      </ul>
     </li>
   </ul>
 
