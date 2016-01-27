@@ -22,4 +22,8 @@ export class LibrariesComponent {
   addLibrary(title: string) {
     this._librariesService.addLibrary(title);
   }
+
+  addTerm(library: Library, term: string) {
+    library.addTerm(term);
+  }
 }

@@ -10,6 +10,9 @@
           {{term}}
         </li>
       </ul>
+      <form class="libraries--new-term" (ngSubmit)="addTerm(library, term.value)">
+        <input name="term" #term placeholder="Nouveau terme">
+      </form>
     </li>
   </ul>
 

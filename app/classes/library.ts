@@ -1,7 +1,11 @@
 export class Library {
-  terms: Array<string> = ['Terme 1', 'Terme 2', 'Terme 3'];
+  terms: Array<string> = [];
 
   constructor(public title: string) {
 
+  }
+
+  addTerm(term: string) {
+    this.terms.push(term);
   }
 }
