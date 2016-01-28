@@ -1,4 +1,6 @@
-import {Component} from 'angular2/core';
+import {Component}        from 'angular2/core';
+import {LibrariesService} from '../services/libraries.service';
+import {Library}          from '../classes/library';
 
 @Component({
   selector: 'matchmaker-generator',
@@ -6,8 +8,21 @@ import {Component} from 'angular2/core';
 })
 export class GeneratorComponent {
   result: string;
+  libraries: Array<Library>;
+
+  constructor(private _librariesService: LibrariesService) {
+
+  }
+
+  ngOnInit() {
+    this.libraries = this._librariesService.getLibraries();
+  }
 
   generate() {
-    this.result = 'Dummy result';
+    let result = '';
+    this.libraries.forEach((library) => {
+      result = result + library.getRandomTerm() + ' ';
+    });
+    this.result = result;
   }
 }

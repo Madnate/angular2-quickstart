@@ -6,7 +6,6 @@ import {LibrariesService} from '../services/libraries.service';
 @Component({
   selector: 'matchmaker-libraries',
   templateUrl: 'app/templates/libraries.html',
-  providers: [LibrariesService],
   directives: [LibraryComponent]
 })
 export class LibrariesComponent {

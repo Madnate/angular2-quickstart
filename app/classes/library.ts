@@ -8,4 +8,8 @@ export class Library {
   addTerm(term: string) {
     this.terms.push(term);
   }
+
+  getRandomTerm() {
+    return this.terms[Math.floor(Math.random()*this.terms.length)];
+  }
 }
