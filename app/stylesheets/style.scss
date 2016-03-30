@@ -1,1 +1,117 @@
 @import 'conf/reset';
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900);
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+}
+
+.main {
+	width: 100%;
+
+}
+
+.content {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	width: 1200px;
+
+
+}
+
+nav {
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid #f4f4f4;
+}
+
+#logo {
+	display: inline-block;
+	position: relative;
+	width: 101px;
+	height: 80px;
+	background-image: url("../img/logo.png");
+	text-indent: -9999;
+}
+
+
+
+#profil {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	float: right;
+	width: 80px;
+	height: 80px;
+	background-image: url("../img/profil.png");
+	margin-top: 10px;
+
+
+}
+
+#stats {
+	margin: 30px 0;
+	border-bottom: 1px solid #f4f4f4;
+}
+#stats ul {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#stats ul li {
+	display: inline-block;
+	text-align: right;
+	width: 18%;
+}
+
+#stats ul li h2, #stats ul li span  {
+	display: block;
+	letter-spacing: 1px;
+	margin: 10px 0;
+
+}
+
+
+#stats ul li h2 {
+	font-weight: 300;
+	font-size: 14;
+	color: #8CA0B3;
+
+}
+
+
+#stats ul li span {
+	font-size: 26px;
+	color: #4F677D;
+	font-weight: 100;
+
+}
+
+#stats ul li span.blue {
+	font-weight: 300;
+	color: #61CCFE;
+}
+
+
+
+#graph h3 {
+	font-size: 33px;
+	color: #334250;
+	font-weight: 300;
+}
+
+#graph h4 {
+	color: #C4C4C4;
+}
+
+
+
+
+
+
+
+
+
+
+
