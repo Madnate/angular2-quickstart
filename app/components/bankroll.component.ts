@@ -1,16 +1,19 @@
 import {Component} from 'angular2/core';
-import {Bankroll} from '../services/bankroll.services';
+import {BankrollService} from '../services/bankroll.service';
 import {Account} from '../classes/account';
 
-
 @Component({
-    selector: 'my-app',
-    templateUrl: 'app/templates/app.html',
-    directives: [Bankroll]
-
+    selector: 'bankroll-stat',
+    templateUrl: 'app/templates/bankroll.html',
+    providers: [BankrollService]
 })
 export class BankrollComponent {
 
+    constructor(
+        private _bankroll: BankrollService
+    ) {}
 
-
+    ngOnInit() {
+        console.log('_bankroll', this._bankroll);
+    }
 }
