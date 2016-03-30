@@ -8,12 +8,15 @@ import {Account} from '../classes/account';
     providers: [BankrollService]
 })
 export class BankrollComponent {
-
+    title: String;
     constructor(
         private _bankroll: BankrollService
     ) {}
 
     ngOnInit() {
         console.log('_bankroll', this._bankroll);
+        this.title = this._bankroll.getTitle();
     }
+
+
 }

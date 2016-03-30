@@ -18,4 +18,9 @@ export class BankrollService{
     getBets() {
         return this.bets;
     }
+
+    getTitle(){
+        return this.bankroll.getTitle();
+    }
+
 }
