@@ -3,7 +3,7 @@ import {Bet} from './bet';
 export class Bankroll{
 	title: String;
 	starting_capital: Number;
-	actual_capital: Number;
+	actual_capital: Number = 1147;
 	profites: Number;
 	progression: String;
 	livebet: Number;
@@ -31,6 +31,9 @@ export class Bankroll{
 
 	getTitle(){
 		return this.title;
+	}
+	getActual_capital(){
+		return this.actual_capital;
 	}
 
 	getLiveBet(){

@@ -22,5 +22,7 @@ export class BankrollService{
     getTitle(){
         return this.bankroll.getTitle();
     }
-
+    getActual_capital(){
+        return this.bankroll.getActual_capital();
+    }
 }

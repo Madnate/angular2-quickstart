@@ -9,6 +9,7 @@ import {Account} from '../classes/account';
 })
 export class BankrollComponent {
     title: String;
+    actual_capital: Number;
     constructor(
         private _bankroll: BankrollService
     ) {}
@@ -16,6 +17,7 @@ export class BankrollComponent {
     ngOnInit() {
         console.log('_bankroll', this._bankroll);
         this.title = this._bankroll.getTitle();
+        this.actual_capital = this._bankroll.getActual_capital();
     }
 
 
