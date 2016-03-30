@@ -1,5 +1,6 @@
 var gulp    = require('gulp');
 var less    = require('gulp-less');
+var sass    = require('gulp-sass');
 var connect = require('gulp-connect');
 var ts      = require('gulp-typescript');
 var gutil   = require('gulp-util');
@@ -13,12 +14,22 @@ var staticFiles = [
   appFolder + '**/*.html',
   appFolder + '**/*.jpg',
   appFolder + '**/*.png',
-  appFolder + '/js/chart.min.js'
+  appFolder + '/js/chart.min.js'  
 ];
 
 gulp.task('less', function () {
   return gulp.src(appFolder + 'less/style.less')
     .pipe(less().on('error', function(err){
+      gutil.log(err);
+      this.emit('end');
+    }))
+    .pipe(gulp.dest(distFolder + 'css'))
+    .pipe(connect.reload());
+});
+
+gulp.task('sass', function () {
+  return gulp.src(appFolder + 'stylesheets/style.scss')
+    .pipe(sass().on('error', function(err){
       gutil.log(err);
       this.emit('end');
     }))
@@ -48,11 +59,12 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function () {
-  gulp.watch([appFolder + 'less/**/*.less'], ['less']);
+  // gulp.watch([appFolder + 'less/**/*.less'], ['less']);
+  gulp.watch([appFolder + 'stylesheets/style.scss'], ['sass']);
   gulp.watch([appFolder + '**/*.ts'], ['ts']);
   gulp.watch(staticFiles, ['static']);
 });
 
-gulp.task('build', ['ts', 'less', 'static']);
+gulp.task('build', ['ts', 'sass', 'static']);
 
 gulp.task('default', ['build', 'connect', 'watch']);
