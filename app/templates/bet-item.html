@@ -1,0 +1,19 @@
+<div [hidden]="editing">
+    <span (dblclick)="editTask()">{{title}}</span>
+    <span (dblclick)="editTask()">{{odd}}</span>
+    <span (dblclick)="editTask()">{{stake}}</span>
+    <span (dblclick)="editTask()">{{status}}</span>
+    <button class="delete" (click)="deleteTask()">x</button>
+</div>
+<form [hidden]="!editing" (submit)="doneEditing($event, newtitle.value, newodd.value, newstake.value, newstatus.value)">
+    <input #newtitle type="text" [value]="title">
+    <input #newodd type="text" [value]="odd">
+    <input #newstake type="text" [value]="stake">
+    <select #newstatus>
+        <option value="En cours">En cours</option>
+        <option value="Gagné">Gagné</option>
+        <option value="Perdu">Perdu</option>
+        <option value="Remboursé">Remboursé</option>
+    </select>
+    <button type="submit" class="btn btn-default">Envoyer</button>
+</form>
