@@ -13,6 +13,7 @@ var staticFiles = [
   appFolder + '**/*.html',
   appFolder + '**/*.jpg',
   appFolder + '**/*.png',
+  appFolder + '/js/chart.min.js'
 ];
 
 gulp.task('less', function () {
